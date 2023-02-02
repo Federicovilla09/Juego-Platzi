@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medieval</title>
+    <script src="./JS/index.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,300;1,300&family=Rubik+Distressed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section id="seleccionar-Medieval">
+      <h1 class="titulo">Medieval</h1>
+
+      <h2 class="subtitulo">Elige tu Avatar Medieval:</h2>
+
+      <div class="tarjetas">
+        <input type="radio" id="hipodoge" name="Medieval" />
+        <label class="tarjeta-de-mokepon" for="hipodoge">
+          <p>Hipodoge</p>
+          <img src="./assets/mago-fuego.png" alt="hipodoge" />
+        </label>
+
+        <input type="radio" id="capipepo" name="Medieval" />
+        <label class="tarjeta-de-mokepon" for="capipepo">
+          <p>Capipepo</p>
+          <img src="./assets/mago-agua.jpg" alt="capipepo" />
+        </label>
+
+        <input type="radio" id="ratigueya" name="Medieval" />
+        <label class="tarjeta-de-mokepon" for="ratigueya">
+          <p>Ratigueya</p>
+          <img src="./assets/mago tierra.jpg" alt="ratigueya" />
+        </label>
+      </div>
+
+      <button class="boton-seleccionar" id="boton-Medieval">Seleccionar</button>
+    </section>
+
+    <section id="seleccionar-ataques">
+      <h1 class="titulo">Medieval</h1>
+
+      <h2 class="subtitulo">Elige tu ataque Medieval:</h2>
+
+      <div class="tarjetas-ataques">
+        <button class="boton-de-ataques" id="boton-fuego">Fuego 🔥</button>
+        <button class="boton-de-ataques" id="boton-agua">Agua 💧</button>
+        <button class="boton-de-ataques" id="boton-tierra">Tierra 🌱</button>
+      </div>
+
+      <div id="mensajes">
+        <p id="resultado">Mucha Suerte</p>
+
+        <section id="reiniciar">
+          <button id="boton-reiniciar">Reiniciar</button>
+        </section>
+      </div>
+
+      <div class="ataques">
+        <div class="ataque-jugador">
+          <p id="vidas-jugador">3</p> 
+          <p id="Medieval-jugador"></p>
+          <div id="ataques-del-jugador"></div>
+        </div>
+
+        <div class="ataque-enemigo">
+          <p id="vidas-enemigo">3</p>
+          <p id="Medieval-enemigo"></p>
+          <div id="ataques-del-enemigo"></div>
+        </div>
+      </div>
+      
+    </section>
+  </body>
+</html>
