@@ -22,6 +22,19 @@ let ataqueEnemigo;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
+class Medieval {
+  constructor (nombre, foto, vida){
+    this.nombre = nombre,
+    this.foto = foto,
+    this.vida = vida;
+  }
+}
+
+let hipodoge = new Medieval('Hipodoge', './assets/mago-fuego.png', 5);
+let capipepo = new Medieval('Capipepo', './assets/mago-agua.jpg', 5);
+let ratigueya = new Medieval('Ratigueya', './assets/mago tierra.jpg', 5);
+
+
 function iniciarJuego() {
   sectionSeleccionarAtaque.style.display = "none";
   sectionReiniciar.style.display = "none";
