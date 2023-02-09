@@ -17,6 +17,8 @@ const sectionMensaje = document.getElementById("resultado");
 const ataquesDelJugador = document.getElementById("ataques-del-jugador");
 const ataquesDelEnemigo = document.getElementById("ataques-del-enemigo");
 
+
+let medievales = [];
 let ataqueJugador;
 let ataqueEnemigo;
 let vidasJugador = 3;
@@ -31,9 +33,14 @@ class Medieval {
 }
 
 let hipodoge = new Medieval('Hipodoge', './assets/mago-fuego.png', 5);
+
 let capipepo = new Medieval('Capipepo', './assets/mago-agua.jpg', 5);
+
 let ratigueya = new Medieval('Ratigueya', './assets/mago tierra.jpg', 5);
 
+medievales.push(hipodoge, capipepo, ratigueya);
+
+console.log(medievales);
 
 function iniciarJuego() {
   sectionSeleccionarAtaque.style.display = "none";
