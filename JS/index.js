@@ -29,6 +29,7 @@ class Medieval {
     this.nombre = nombre,
     this.foto = foto,
     this.vida = vida;
+    this.ataques = [];
   }
 }
 
@@ -38,9 +39,30 @@ let capipepo = new Medieval('Capipepo', './assets/mago-agua.jpg', 5);
 
 let ratigueya = new Medieval('Ratigueya', './assets/mago tierra.jpg', 5);
 
-medievales.push(hipodoge, capipepo, ratigueya);
+hipodoge.ataques.push(
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "🌱", id: "boton-tierra" }
+);
 
-console.log(medievales);
+capipepo.ataques.push(
+  { nombre: "🌱", id: "boton-tierra" },
+  { nombre: "🌱", id: "boton-tierra" },
+  { nombre: "🌱", id: "boton-tierra" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "🔥", id: "boton-fuego" }
+);
+
+ratigueya.ataques.push(
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "🔥", id: "boton-fuego" },
+  { nombre: "💧", id: "boton-agua" },
+  { nombre: "🌱", id: "boton-tierra" }
+);
+
 
 function iniciarJuego() {
   sectionSeleccionarAtaque.style.display = "none";
