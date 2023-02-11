@@ -5,7 +5,9 @@ const botonFuego = document.getElementById("boton-fuego");
 const botonAgua = document.getElementById("boton-agua");
 const botonTierra = document.getElementById("boton-tierra");
 const botonReiniciar = document.getElementById("boton-reiniciar");
-const sectionSeleccionarMedieval = document.getElementById("seleccionar-Medieval");
+const sectionSeleccionarMedieval = document.getElementById(
+  "seleccionar-Medieval"
+);
 const inputHipodoge = document.getElementById("hipodoge");
 const inputCapipepo = document.getElementById("capipepo");
 const inputRatigueya = document.getElementById("ratigueya");
@@ -16,28 +18,27 @@ const spanVidasEnemigo = document.getElementById("vidas-enemigo");
 const sectionMensaje = document.getElementById("resultado");
 const ataquesDelJugador = document.getElementById("ataques-del-jugador");
 const ataquesDelEnemigo = document.getElementById("ataques-del-enemigo");
-
+const contenedorTarjetas = document.getElementById("contenedorTarjetas;");
 
 let medievales = [];
 let ataqueJugador;
 let ataqueEnemigo;
+let opcionDeMedievales;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
 class Medieval {
-  constructor (nombre, foto, vida){
-    this.nombre = nombre,
-    this.foto = foto,
-    this.vida = vida;
+  constructor(nombre, foto, vida) {
+    (this.nombre = nombre), (this.foto = foto), (this.vida = vida);
     this.ataques = [];
   }
 }
 
-let hipodoge = new Medieval('Hipodoge', './assets/mago-fuego.png', 5);
+let hipodoge = new Medieval("Hipodoge", "./assets/mago-fuego.png", 5);
 
-let capipepo = new Medieval('Capipepo', './assets/mago-agua.jpg', 5);
+let capipepo = new Medieval("Capipepo", "./assets/mago-agua.jpg", 5);
 
-let ratigueya = new Medieval('Ratigueya', './assets/mago tierra.jpg', 5);
+let ratigueya = new Medieval("Ratigueya", "./assets/mago tierra.jpg", 5);
 
 hipodoge.ataques.push(
   { nombre: "💧", id: "boton-agua" },
@@ -63,9 +64,22 @@ ratigueya.ataques.push(
   { nombre: "🌱", id: "boton-tierra" }
 );
 
+medievales.push(hipodoge, capipepo, ratigueya);
 
 function iniciarJuego() {
   sectionSeleccionarAtaque.style.display = "none";
+
+  medievales.forEach((medieval) => {
+    opcionDeMedievales = `
+    <input type="radio" id=${medieval.nombre} name="Medieval" />
+        <label class="tarjeta-de-mokepon" for=${medieval.nombre}>
+          <p>${medieval.nombre}</p>
+          <img src=${medieval.foto} alt=${medieval.nombre} />
+        </label>`;
+
+    contenedorTarjetas.innerHTML += opcionDeMedievales;
+  });
+
   sectionReiniciar.style.display = "none";
   botonMedievalJugador.addEventListener("click", seleccionarMedievalJugador);
   botonFuego.addEventListener("click", ataqueFuego);
@@ -93,7 +107,7 @@ function seleccionarMedievalJugador() {
 
 function seleccionarMedievalEnemigo() {
   let MedievalAleatorio = aleatorio(1, 3);
-  
+
   if (MedievalAleatorio == 1) {
     spanMedievalEnemigo.innerHTML = "Hipodoge";
   } else if (MedievalAleatorio == 2) {
@@ -135,7 +149,6 @@ function ataqueAleatorioEnemigo() {
 }
 
 function combate() {
-  
   if (ataqueEnemigo == ataqueJugador) {
     crearMensaje("EMPATE");
   } else if (ataqueJugador == "Fuego" && ataqueEnemigo == "Tierra") {
@@ -180,18 +193,14 @@ function crearMensaje(resultado) {
 }
 
 function crearMensajeFinal(resultadoFinal) {
-  
-
   sectionMensaje.innerHTML = resultadoFinal;
 
-  
   botonFuego.disabled = true;
-  
+
   botonAgua.disabled = true;
-  
+
   botonTierra.disabled = true;
 
- 
   sectionReiniciar.style.display = "block";
 }
 
